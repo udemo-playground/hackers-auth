@@ -1,0 +1,28 @@
+apiVersion: automation.cloudbees.io/v1alpha1
+kind: workflow
+name: deploy
+on:
+  workflow_call:
+    inputs:
+      artifact-id:
+        type: string
+        required: true
+      artifactVersion:
+        type: string
+        required: true
+      environment:
+        type: string
+        required: true
+
+jobs:
+  deploy:
+    uses: TARGET_ORG/PROJECT_NAME-workflows/helm-deploy.yaml
+    vars: inherit
+    secrets: inherit
+    with:
+      artifact-id: ${{ inputs.artifact-id }}
+      artifactVersion: ${{ inputs.artifactVersion }}
+      environment: ${{ inputs.environment }}
+      hostname: hackers-auth.${{ inputs.environment }}.preview.cb-demos.io
+      appName: hackers-auth
+      repo: TARGET_ORG/PROJECT_NAME-auth

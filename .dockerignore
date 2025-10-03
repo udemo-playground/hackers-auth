@@ -1,0 +1,38 @@
+# Git
+.git
+.gitignore
+
+# Docker
+Dockerfile
+.dockerignore
+
+# IDE specific files
+.idea
+.vscode
+*.swp
+*.swo
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Test files
+*_test.go
+*.test
+
+# Build files
+bin/
+dist/
+
+# Environment variables
+.env
+.env.local
+
+# Go specific
+vendor/
+go.work
+
+# Documentation
+README.md
+docs/
+*.md 

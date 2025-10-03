@@ -1,0 +1,31 @@
+Thank you for installing {{ .Chart.Name }}.
+
+Your application is now being deployed...
+
+Application Details:
+  Host: {{ .Values.hostname }}
+  Image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+
+The API will be available at:
+  https://{{ .Values.hostname }}/api/stories
+
+You can access the Swagger documentation at:
+  https://{{ .Values.hostname }}/swagger/index.html
+
+To test the API, try:
+  curl -X GET "https://{{ .Values.hostname }}/api/stories"
+
+1. Get the application URL by running these commands:
+  http://{{ .Values.hostname }}/
+
+2. Test the login endpoint:
+  curl -X POST http://{{ .Values.hostname }}/login \
+    -H "Content-Type: application/json" \
+    -d '{"username": "betauser", "password": "betauser"}'
+
+3. Access the Swagger documentation:
+  http://{{ .Values.hostname }}/swagger/index.html
+
+Available test users:
+- Beta User: username=betauser, password=betauser
+- Normal User: username=normaluser, password=normaluser 
