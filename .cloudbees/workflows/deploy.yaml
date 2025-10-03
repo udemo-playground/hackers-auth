@@ -16,7 +16,7 @@ on:
 
 jobs:
   deploy:
-    uses: TARGET_ORG/PROJECT_NAME-workflows/helm-deploy.yaml
+    uses: udemo-playground/hackers-workflows/helm-deploy.yaml
     vars: inherit
     secrets: inherit
     with:
@@ -25,4 +25,4 @@ jobs:
       environment: ${{ inputs.environment }}
       hostname: hackers-auth.${{ inputs.environment }}.preview.cb-demos.io
       appName: hackers-auth
-      repo: TARGET_ORG/PROJECT_NAME-auth
+      repo: udemo-playground/hackers-auth
